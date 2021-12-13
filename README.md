@@ -508,7 +508,7 @@ Add the following to the MainActivity.class.
             // insert into the database.
             mBinViewModel.insert(bin);
         } else {
-            Toast.makeText(this, R.string.empty_not_saved, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Not Saved", Toast.LENGTH_SHORT).show();
         }
     }
 ```
@@ -523,7 +523,7 @@ And add the logic for the Floating Action Button in the onCreate() method:
 
 ```java
 // setup for Floating Action Button for adding.
-        FloatingActionButton fab = binding.floatingActionButton;
+        FloatingActionButton fab = findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(new View.OnClickListener() { // Set on click listener for fab.
            @Override
            public void onClick(View view) {
