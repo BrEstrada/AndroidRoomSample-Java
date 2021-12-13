@@ -86,6 +86,9 @@ public interface BinDao {
     @Query("SELECT * FROM bin_table")
     LiveData<List<Bin>> getAllBins();
 
+    @Query("SELECT * FROM bin_table LIMIT 1")
+    Bin[] getAnyBin();
+
     @Delete
     void deleteBin(Bin bin);
 }
@@ -471,7 +474,7 @@ And this is the XML for the activity:
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
-        android:hint="@string/bin_name"
+        android:hint="Bin Name"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -484,7 +487,7 @@ And this is the XML for the activity:
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/button_submit"
+        android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_new_bin_edittext" />

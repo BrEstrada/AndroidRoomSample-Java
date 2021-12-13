@@ -17,6 +17,9 @@ public interface BinDao {
     @Query("SELECT * FROM bin_table")
     LiveData<List<Bin>> getAllBins();
 
+    @Query("SELECT * FROM bin_table LIMIT 1")
+    Bin[] getAnyBin();
+
     @Delete
     void deleteBin(Bin bin);
 }
