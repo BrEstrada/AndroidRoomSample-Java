@@ -325,7 +325,7 @@ public class BinListAdapter extends RecyclerView.Adapter<BinListAdapter.BinViewH
 
 ## Step 10
 
-Add the recycler view to the main activity.
+Add the recycler view to the main activity in the onCreate method.
 
 ```java
     RecyclerView recyclerView = findViewById(R.id.activity_main_recyclerview);
