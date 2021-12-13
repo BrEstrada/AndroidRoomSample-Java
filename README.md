@@ -214,7 +214,7 @@ Add a new resource layout file for a Recycler View Item.
    android:layout_height="wrap_content">
 
    <TextView
-       android:id="@+id/textView"
+       android:id="@+id/recyclerview_item_bin_name_textview"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        tools:text="placeholder text"
