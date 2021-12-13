@@ -1,6 +1,8 @@
-# AndroidRoomSample-Java
+# AndroidRoomSample-Java Tutorial
 
-Tutorial for using Room on Android created using Java in Android Studio. This tutorial will demo insert using Android Room methods.
+## DMIT2504 Final Project Tutorial
+
+> This is a tutorial for using Room on Android created using Java in Android Studio. This tutorial will demo insert using Android Room methods.
 
 ## Step 1
 
@@ -36,7 +38,7 @@ ext {
 
 ## Step 3
 
-Create Entity Class with Android Room annotations. More info can be found [here.](https://developer.android.com/training/data-storage/room/defining-data.html)
+Create an Entity Class with Android Room annotations. More info can be found [here.](https://developer.android.com/training/data-storage/room/defining-data.html)
 
 ```java
 /**
@@ -67,3 +69,25 @@ public class Bin {
     public void setId(int id) { this.id = id; }
 }
 ```
+
+## Step 4
+
+Create Data Access Object [(DAO)](https://developer.android.com/training/data-storage/room/accessing-data.html) interface class with Room annotations. The DAO validates the SQL and associates it with methods.
+
+> (_NOTE:_ This demo only uses the insert and query method, other CRUD operations can be implemented here too. A delete method has also been included.)
+
+```java
+@Dao
+public interface BinDao {
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    void insert(Bin bin);
+
+    @Query("SELECT * FROM bin_table")
+    LiveData<List<Bin>> getAllBins();
+
+    @Delete
+    void deleteBin(Bin bin);
+}
+```
+
+## Step 5
