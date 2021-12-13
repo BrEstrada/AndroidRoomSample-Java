@@ -117,6 +117,7 @@ public abstract class BinDatabase extends RoomDatabase {
         }
         return INSTANCE;
     }
+}
 ```
 
 ## Step 6
